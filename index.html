@@ -16,6 +16,16 @@
 </script>
 <!-- End Google Tag Manager -->
 <meta charset="utf-8">
+  <!-- base path: makes relative URLs work on GitHub Pages (/onepagepartner/) and on normal hosting (/) -->
+  <base href="/">
+  <script>
+    (function () {
+      var base = document.querySelector('base');
+      if (!base) return;
+      // If hosted on GitHub Pages project site, path includes the repo name.
+      base.setAttribute('href', location.pathname.indexOf('/onepagepartner/') === 0 ? '/onepagepartner/' : '/');
+    })();
+  </script>
 <title>One Page Partner｜マーケティングの戦略＆実行・運用を推進し、成長を支える共創パートナー</title>
 <meta name="viewport" content="width=device-width">
 <meta name="description" content="戦略からWEB／動画制作、SNS・広告運用、インフルエンサー施策までを統合支援する共創型パートナーです。施策の分断による負荷やズレを解消し、KPI設計〜実行・改善をワンチームで推進。投資対効果を最大化し、マーケティングを事業成長へ一貫してつなげます。">
@@ -94,7 +104,7 @@
 <main class="tp_main">
   <canvas class="js_traislLine" id="js_trail"></canvas>
   <div class="tp_video">
-    <video src="../assets/video/mini.mp4" class="tp_video_soure" poster="../assets/img/top/kv_img.jpg" autoplay loop muted playsinline></video>
+    <video src="assets/video/mini.mp4" class="tp_video_soure" poster="assets/img/top/kv_img.jpg" autoplay loop muted playsinline></video>
   </div>
   <div class="tp_lineWrap">
     <div class="tp_hero js_heroBg">
@@ -123,25 +133,25 @@
           <p class="tp_mssg_txt js_bgFlow">
             <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">情報が溢れ、スピードが求められる時代に、</span></span><br>
             <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">大切なのは“何を伝えるか”ではなく、</span></span><br>
-            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt"> “なぜ伝えるのか”を見失わないこと。 </span></span>
+            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">“なぜ伝えるのか”を見失わないこと。</span></span>
           </p>
           <p class="tp_mssg_txt js_bgFlow">
-            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">ONE PAGE PARTNER は、 </span></span><br>
-            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">企業が描く理想の未来を見据え、 </span></span><br>
+            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">ONE PAGE PARTNER は、</span></span><br>
+            <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">企業が描く理想の未来を見据え、</span></span><br>
             <span class="el_bgFlow_wrap none-d-md"><span class="el_bgFlow_txt">その想いを最適な形で世界中へ届けていきます。</span></span>
             <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">その想いを最適な形で</span></span><br>
             <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">世界中へ届けていきます。</span></span>
           </p>
           <p class="tp_mssg_txt js_bgFlow">
             <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">戦略とクリエイティブを組み合わせ、</span></span><br>
-            <span class="el_bgFlow_wrap none-d-md"><span class="el_bgFlow_txt">今この瞬間を未来へとつなぐ仕組みをデザインする。  </span></span>
-            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">今この瞬間を未来へとつなぐ仕組みを  </span></span><br>
-            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">デザインする。  </span></span>
+            <span class="el_bgFlow_wrap none-d-md"><span class="el_bgFlow_txt">今この瞬間を未来へとつなぐ仕組みをデザインする。</span></span>
+            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">今この瞬間を未来へとつなぐ仕組みを</span></span><br>
+            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">デザインする。</span></span>
           </p>
           <p class="tp_mssg_txt js_bgFlow">
-            <span class="el_bgFlow_wrap none-d-md"><span class="el_bgFlow_txt">私たちは、企業とその先にいる人々の心をつなぐために </span></span><br class="none-d-md">
+            <span class="el_bgFlow_wrap none-d-md"><span class="el_bgFlow_txt">私たちは、企業とその先にいる人々の心をつなぐために</span></span><br class="none-d-md">
             <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">私たちは、企業とその先にいる人々の</span></span><br class="none-md">
-            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">心をつなぐために </span></span><br class="none-md">
+            <span class="el_bgFlow_wrap none-md"><span class="el_bgFlow_txt">心をつなぐために</span></span><br class="none-md">
             <span class="el_bgFlow_wrap"><span class="el_bgFlow_txt">今をつむぎながら未来へと繋いでいきます。</span></span>
           </p>
           <p class="tp_mssg_copy">私たちは<br>言葉や文化の境界越え、<br>想いを世界へつなぐ<br>マーケティング<br class="none-md">パートナー</p>
