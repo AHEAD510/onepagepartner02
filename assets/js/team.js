@@ -1,3 +1,12 @@
+// GitHub Pages (subdirectory) and shared hosting safe path resolver
+const resolvePath = (url) => {
+  if (!url) return url;
+  // If a URL starts with "/", make it relative so it works under /<repo>/ on GitHub Pages.
+  // Example: "/assets/json/loading.json" -> "./assets/json/loading.json"
+  if (typeof url === "string" && url.charAt(0) === "/") return `.${url}`;
+  return url;
+};
+
 // ==========================================
 //   event
 // ==========================================
@@ -8,4 +17,4 @@ document.addEventListener("DOMContentLoaded",()=>{}),window.addEventListener("lo
   select:not([disabled]),
   textarea:not([disabled]),
   [tabindex]:not([tabindex="-1"])
-`;function revealModalContents(){document.querySelectorAll(".js_modalMask").forEach((e,t)=>{setTimeout(()=>{e.classList.add("is_revealed")},150*t)})}function openModal(e){lastFocused=document.activeElement,modal.hidden=!1,overlay.hidden=!1,e?fetch(e).then(e=>e.text()).then(e=>{modalContent.innerHTML=e,requestAnimationFrame(()=>{overlay.classList.add("is_active"),modal.classList.add("is_active"),revealModalContents()})}):requestAnimationFrame(()=>{overlay.classList.add("is_active"),modal.classList.add("is_active"),revealModalContents()}),document.body.classList.add("is_modalOpen"),modal.setAttribute("aria-hidden","false"),closeBtn.focus(),document.addEventListener("keydown",trapFocus)}function closeModal(){overlay.classList.remove("is_active"),modal.classList.remove("is_active"),document.body.classList.remove("is_modalOpen"),modal.setAttribute("aria-hidden","true"),setTimeout(()=>{modal.hidden=!0,overlay.hidden=!0,modalContent.innerHTML=""},400)}function trapFocus(e){var t,o;"Escape"===e.key?closeModal():(t=(o=modal.querySelectorAll(focusableSelectors))[0],o=o[o.length-1],"Tab"===e.key&&(e.shiftKey?document.activeElement===t&&(o.focus(),e.preventDefault()):document.activeElement===o&&(t.focus(),e.preventDefault())))}openBtns.forEach(e=>{e.addEventListener("click",()=>{openModal(e.dataset.url)})}),overlay.addEventListener("click",closeModal),closeBtn.addEventListener("click",closeModal);
+`;function revealModalContents(){document.querySelectorAll(".js_modalMask").forEach((e,t)=>{setTimeout(()=>{e.classList.add("is_revealed")},150*t)})}function openModal(e){lastFocused=document.activeElement,modal.hidden=!1,overlay.hidden=!1,e?fetch(resolvePath(e)).then(e=>e.text()).then(e=>{modalContent.innerHTML=e,requestAnimationFrame(()=>{overlay.classList.add("is_active"),modal.classList.add("is_active"),revealModalContents()})}):requestAnimationFrame(()=>{overlay.classList.add("is_active"),modal.classList.add("is_active"),revealModalContents()}),document.body.classList.add("is_modalOpen"),modal.setAttribute("aria-hidden","false"),closeBtn.focus(),document.addEventListener("keydown",trapFocus)}function closeModal(){overlay.classList.remove("is_active"),modal.classList.remove("is_active"),document.body.classList.remove("is_modalOpen"),modal.setAttribute("aria-hidden","true"),setTimeout(()=>{modal.hidden=!0,overlay.hidden=!0,modalContent.innerHTML=""},400)}function trapFocus(e){var t,o;"Escape"===e.key?closeModal():(t=(o=modal.querySelectorAll(focusableSelectors))[0],o=o[o.length-1],"Tab"===e.key&&(e.shiftKey?document.activeElement===t&&(o.focus(),e.preventDefault()):document.activeElement===o&&(t.focus(),e.preventDefault())))}openBtns.forEach(e=>{e.addEventListener("click",()=>{openModal(e.dataset.url)})}),overlay.addEventListener("click",closeModal),closeBtn.addEventListener("click",closeModal);

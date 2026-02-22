@@ -1,3 +1,11 @@
+// GitHub Pages (subdirectory) and shared hosting safe path resolver
+const resolvePath = (url) => {
+  if (!url) return url;
+  // If a URL starts with "/", make it relative so it works under /<repo>/ on GitHub Pages.
+  // Example: "/assets/json/loading.json" -> "./assets/json/loading.json"
+  if (typeof url === "string" && url.charAt(0) === "/") return `.${url}`;
+  return url;
+};
 // ==========================================
 //   event
 // ==========================================
