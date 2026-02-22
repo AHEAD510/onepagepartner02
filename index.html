@@ -16,14 +16,25 @@
 </script>
 <!-- End Google Tag Manager -->
 <meta charset="utf-8">
-  <!-- base path: makes relative URLs work on GitHub Pages (/onepagepartner/) and on normal hosting (/) -->
+  <!-- base path: makes relative URLs work on GitHub Pages (/<repo>/) and on normal hosting (/) -->
   <base href="/">
   <script>
     (function () {
       var base = document.querySelector('base');
       if (!base) return;
-      // If hosted on GitHub Pages project site, path includes the repo name.
-      base.setAttribute('href', location.pathname.indexOf('/onepagepartner/') === 0 ? '/onepagepartner/' : '/');
+
+      // GitHub Pages project sites are hosted at: https://<user>.github.io/<repo>/...
+      // Detect the repo segment dynamically so this works for /onepagepartner/, /onepagepartner02/, etc.
+      var path = location.pathname || '/';
+      var parts = path.split('/').filter(Boolean);
+      var isGitHubPages = /\.github\.io$/i.test(location.hostname);
+
+      if (isGitHubPages && parts.length > 0) {
+        base.setAttribute('href', '/' + parts[0] + '/');
+      } else {
+        // Normal hosting (domain root). If you host under a subdirectory, set this manually.
+        base.setAttribute('href', '/');
+      }
     })();
   </script>
 <title>One Page Partner｜マーケティングの戦略＆実行・運用を推進し、成長を支える共創パートナー</title>
